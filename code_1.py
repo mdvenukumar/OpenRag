@@ -188,5 +188,20 @@ with col2:
             st.warning("Unable to fetch related articles. Please check the logs for more information.")
     else:
         st.info("Upload a PDF to see related articles.")
+st.markdown("""
+    <style>
+    .bottom-right {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 10px;
+    }
+    </style>
+    <div class="bottom-right">
+        <a href="https://www.producthunt.com/posts/docuexplore?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-docuexplore" target="_blank">
+            <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=474872&theme=dark" alt="DocuExplore - From PDF to Insight, Explore the Extra | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
+        </a>
+    </div>
+""", unsafe_allow_html=True)
 
 
