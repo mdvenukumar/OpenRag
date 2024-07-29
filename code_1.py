@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 
 # Configure Gemini API
 GEMINI_API_KEY = st.secrets['GEMINI_API_KEY']
-genai.configure(api_key=API_KEY)
+genai.configure(api_key=GEMINI_API_KEY)
 
 # Configure Tavily API
 TAVILY_API_KEY = st.secrets['TAVILY_API_KEY']
