@@ -82,7 +82,7 @@ model = genai.GenerativeModel(
 )
 
 # Streamlit app
-st.set_page_config(page_title="OpenRAG", page_icon="📚", layout="wide")
+st.set_page_config(page_title="DocuExplore", page_icon="⭕", layout="wide")
 
 # Custom CSS for a more professional look
 st.markdown("""
@@ -107,13 +107,13 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("📚 OpenRAG: PDF Chat with Related Articles")
+st.title("⭕ DocuExplore: From PDF to Insight, Explore the Extra", anchor=False)
 
 # Main content and sidebar layout
 col1, col2 = st.columns([2, 1])
 
 with col1:
-    st.subheader("PDF Upload and Chat")
+    st.subheader("Chat Interface", anchor=False)
     uploaded_file = st.file_uploader("Upload a PDF file", type="pdf")
 
     if 'chat_history' not in st.session_state:
@@ -173,7 +173,7 @@ with col1:
         st.info("Please upload a PDF file to start chatting.")
 
 with col2:
-    st.subheader("Related Articles")
+    st.subheader("Related Articles Here", anchor=False)
     if 'search_results' in st.session_state:
         if st.session_state.search_results is not None:
             for result in st.session_state.search_results.get('results', []):
