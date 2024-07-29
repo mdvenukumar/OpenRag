@@ -100,14 +100,40 @@ st.markdown("""
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    .st-emotion-cache-10trblm {
+    .title-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .title-container .title {
+        font-size: 2rem;
         font-weight: bold;
-        color: #1f618d;
+    }
+    .title-container .subtitle {
+        font-size: 1.2rem;
+        color: #555;
+    }
+    .product-hunt-badge {
+        display: flex;
+        align-items: center;
     }
     </style>
     """, unsafe_allow_html=True)
 
-st.title("⭕ DocuExplore: From PDF to Insight, Explore the Extra", anchor=False)
+# Title and Product Hunt badge
+st.markdown("""
+    <div class="title-container">
+        <div>
+            <div class="title">DocuExplore</div>
+            <div class="subtitle">From PDF to Insight, Explore the Extra</div>
+        </div>
+        <div class="product-hunt-badge">
+            <a href="https://www.producthunt.com/posts/docuexplore?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-docuexplore" target="_blank">
+                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=474872&theme=dark" alt="DocuExplore - From PDF to Insight, Explore the Extra | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
+            </a>
+        </div>
+    </div>
+""", unsafe_allow_html=True)
 
 # Main content and sidebar layout
 col1, col2 = st.columns([2, 1])
@@ -180,7 +206,6 @@ with col2:
                 with st.expander(f"**{result.get('title', 'Untitled')}**", expanded=False):
                     st.write(f"[Read More]({result.get('url', '#')})")
                     
-
             if st.session_state.search_results.get('answer'):
                 st.subheader("AI-Generated Summary of Related Content")
                 st.write(st.session_state.search_results['answer'])
@@ -188,21 +213,3 @@ with col2:
             st.warning("Unable to fetch related articles. Please check the logs for more information.")
     else:
         st.info("Upload a PDF to see related articles.")
-
-st.markdown("""
-    <style>
-    .bottom-left {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        margin: 10px;
-    }
-    </style>
-    <div class="bottom-left">
-        <a href="https://www.producthunt.com/posts/docuexplore?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-docuexplore" target="_blank">
-            <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=474872&theme=dark" alt="DocuExplore - From PDF to Insight, Explore the Extra | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
-        </a>
-    </div>
-""", unsafe_allow_html=True)
-
-
