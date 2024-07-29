@@ -82,7 +82,7 @@ model = genai.GenerativeModel(
 )
 
 # Streamlit app
-st.set_page_config(page_title="DocuExplore", page_icon="logo.png", layout="wide")
+st.set_page_config(page_title="DocuExplore", page_icon="logo.svg", layout="wide")
 
 # Custom CSS for a more professional look
 st.markdown("""
@@ -130,7 +130,7 @@ st.markdown("""
     <div class="title-container">
         <div>
             <div class="title">
-                <img src="logo.png" alt="Logo" width="40" height="40">
+                <img src="logo.svg" alt="Logo" width="40" height="40">
                 DocuExplore
             </div>
             <div class="subtitle">From PDF to Insight, Explore the Extra</div>
