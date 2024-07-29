@@ -5,7 +5,6 @@ import google.generativeai as genai
 import tempfile
 from tavily import TavilyClient
 import requests
-
 import logging
 
 # Configure logging
@@ -103,7 +102,6 @@ st.markdown("""
     }
     .header-container {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         margin-top: 2rem; /* Added margin-top for spacing */
         margin-bottom: 2rem;
@@ -114,10 +112,7 @@ st.markdown("""
         font-size: 2.5rem;
         font-weight: bold;
         color: #1f618d;
-    }
-    .header-container .title img {
-        height: 50px; /* Adjust height as needed */
-        margin-right: 1rem;
+        margin-right: 1rem; /* Space between title and logo */
     }
     .header-container .subtitle {
         font-size: 1.2rem;
@@ -135,7 +130,7 @@ st.markdown("""
 st.markdown("""
     <div class="header-container">
         <div class="title">
-            <img src="logo.svg" alt="DocuExplore Logo">
+            <img src="logo.svg" alt="DocuExplore Logo" width="50"> <!-- Adjust width as needed -->
             DocuExplore
         </div>
         <div class="product-hunt-badge">
