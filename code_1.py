@@ -82,7 +82,7 @@ model = genai.GenerativeModel(
 )
 
 # Streamlit app
-st.set_page_config(page_title="DocuExplore", page_icon="⭕", layout="wide")
+st.set_page_config(page_title="DocuExplore", page_icon="logo.svg", layout="wide")
 
 # Custom CSS for a refined look
 st.markdown("""
@@ -104,12 +104,19 @@ st.markdown("""
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-top: 2rem; /* Added margin-top for spacing */
         margin-bottom: 2rem;
     }
     .header-container .title {
+        display: flex;
+        align-items: center;
         font-size: 2.5rem;
         font-weight: bold;
         color: #1f618d;
+    }
+    .header-container .title img {
+        height: 50px; /* Adjust height as needed */
+        margin-right: 1rem;
     }
     .header-container .subtitle {
         font-size: 1.2rem;
@@ -120,26 +127,24 @@ st.markdown("""
         height: 54px;
         width: auto;
     }
-    .bottom-left {
-        position: fixed;
-        bottom: 10px;
-        left: 10px;
-    }
     </style>
     """, unsafe_allow_html=True)
 
 # Title and Product Hunt badge
 st.markdown("""
     <div class="header-container">
-        <div>
-            <div class="title">DocuExplore</div>
-            <div class="subtitle">From PDF to Insight</div>
+        <div class="title">
+            <img src="logo.svg" alt="DocuExplore Logo">
+            DocuExplore
         </div>
         <div class="product-hunt-badge">
             <a href="https://www.producthunt.com/posts/docuexplore?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-docuexplore" target="_blank">
                 <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=474872&theme=dark" alt="DocuExplore - From PDF to Insight | Product Hunt" />
             </a>
         </div>
+    </div>
+    <div class="header-container">
+        <div class="subtitle">From PDF to Insight</div>
     </div>
 """, unsafe_allow_html=True)
 
