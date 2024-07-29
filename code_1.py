@@ -6,6 +6,7 @@ import tempfile
 from tavily import TavilyClient
 import requests
 import logging
+import base64
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -81,56 +82,64 @@ model = genai.GenerativeModel(
     generation_config=generation_config,
 )
 
+# Load the logo.svg as a base64 string
+def load_logo():
+    with open("logo.svg", "rb") as image_file:
+        base64_image = base64.b64encode(image_file.read()).decode()
+    return base64_image
+
+logo_base64 = load_logo()
+
 # Streamlit app
 st.set_page_config(page_title="DocuExplore", page_icon="logo.svg", layout="wide")
 
 # Custom CSS for a more professional look
-st.markdown("""
+st.markdown(f"""
     <style>
-    .main .block-container {
+    .main .block-container {{
         padding-top: 4rem; /* Increased padding for the top */
         padding-bottom: 2rem;
-    }
-    .stApp {
+    }}
+    .stApp {{
         background-color: #f0f2f6;
-    }
-    .st-bx {
+    }}
+    .st-bx {{
         background-color: white;
         border-radius: 5px;
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .title-container {
+    }}
+    .title-container {{
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-    .title-container .title {
+    }}
+    .title-container .title {{
         font-size: 2rem;
         font-weight: bold;
         display: flex;
         align-items: center;
-    }
-    .title-container .title img {
+    }}
+    .title-container .title img {{
         margin-right: 10px; /* Padding between the logo and title */
-    }
-    .title-container .subtitle {
+    }}
+    .title-container .subtitle {{
         font-size: 1.2rem;
         color: #555;
-    }
-    .product-hunt-badge {
+    }}
+    .product-hunt-badge {{
         display: flex;
         align-items: center;
-    }
+    }}
     </style>
     """, unsafe_allow_html=True)
 
 # Title and Product Hunt badge
-st.markdown("""
+st.markdown(f"""
     <div class="title-container">
         <div>
             <div class="title">
-                <img src="logo.svg" alt="Logo" width="40" height="40">
+                <img src="data:image/svg+xml;base64,{logo_base64}" alt="Logo" width="40" height="40">
                 DocuExplore
             </div>
             <div class="subtitle">From PDF to Insight, Explore the Extra</div>
