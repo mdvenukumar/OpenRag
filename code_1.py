@@ -82,13 +82,13 @@ model = genai.GenerativeModel(
 )
 
 # Streamlit app
-st.set_page_config(page_title="DocuExplore", page_icon="⭕", layout="wide")
+st.set_page_config(page_title="DocuExplore", page_icon="logo.png", layout="wide")
 
 # Custom CSS for a more professional look
 st.markdown("""
     <style>
     .main .block-container {
-        padding-top: 2rem;
+        padding-top: 4rem; /* Increased padding for the top */
         padding-bottom: 2rem;
     }
     .stApp {
@@ -108,6 +108,11 @@ st.markdown("""
     .title-container .title {
         font-size: 2rem;
         font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+    .title-container .title img {
+        margin-right: 10px; /* Padding between the logo and title */
     }
     .title-container .subtitle {
         font-size: 1.2rem;
@@ -124,7 +129,10 @@ st.markdown("""
 st.markdown("""
     <div class="title-container">
         <div>
-            <div class="title">DocuExplore</div>
+            <div class="title">
+                <img src="logo.png" alt="Logo" width="40" height="40">
+                DocuExplore
+            </div>
             <div class="subtitle">From PDF to Insight, Explore the Extra</div>
         </div>
         <div class="product-hunt-badge">
