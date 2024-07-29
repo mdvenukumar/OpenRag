@@ -82,7 +82,7 @@ model = genai.GenerativeModel(
 )
 
 # Streamlit app
-st.set_page_config(page_title="DocuExplore", page_icon="logo.svg", layout="wide")
+st.set_page_config(page_title="DocuExplore", page_icon="logo.png", layout="wide")
 
 # Custom CSS for a refined look
 st.markdown("""
@@ -103,6 +103,7 @@ st.markdown("""
     .header-container {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         margin-top: 2rem; /* Added margin-top for spacing */
         margin-bottom: 2rem;
     }
@@ -112,7 +113,6 @@ st.markdown("""
         font-size: 2.5rem;
         font-weight: bold;
         color: #1f618d;
-        margin-right: 1rem; /* Space between title and logo */
     }
     .header-container .subtitle {
         font-size: 1.2rem;
@@ -130,17 +130,17 @@ st.markdown("""
 st.markdown("""
     <div class="header-container">
         <div class="title">
-            <img src="logo.svg" alt="DocuExplore Logo" width="50"> <!-- Adjust width as needed -->
-            DocuExplore
+            <img src="logo.png" alt="DocuExplore Logo" width="50"> <!-- Adjust width as needed -->
+            <div>
+                DocuExplore<br>
+                <span class="subtitle">From PDF to Insight</span>
+            </div>
         </div>
         <div class="product-hunt-badge">
             <a href="https://www.producthunt.com/posts/docuexplore?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-docuexplore" target="_blank">
                 <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=474872&theme=dark" alt="DocuExplore - From PDF to Insight | Product Hunt" />
             </a>
         </div>
-    </div>
-    <div class="header-container">
-        <div class="subtitle">From PDF to Insight</div>
     </div>
 """, unsafe_allow_html=True)
 
