@@ -84,7 +84,7 @@ model = genai.GenerativeModel(
 # Streamlit app
 st.set_page_config(page_title="DocuExplore", page_icon="⭕", layout="wide")
 
-# Custom CSS for a more professional look
+# Custom CSS for a refined look
 st.markdown("""
     <style>
     .main .block-container {
@@ -100,36 +100,44 @@ st.markdown("""
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    .title-container {
+    .header-container {
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
     }
-    .title-container .title {
-        font-size: 2rem;
+    .header-container .title {
+        font-size: 2.5rem;
         font-weight: bold;
+        color: #1f618d;
     }
-    .title-container .subtitle {
+    .header-container .subtitle {
         font-size: 1.2rem;
         color: #555;
+        margin-top: 0.5rem;
     }
-    .product-hunt-badge {
-        display: flex;
-        align-items: center;
+    .product-hunt-badge img {
+        height: 54px;
+        width: auto;
+    }
+    .bottom-left {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
     }
     </style>
     """, unsafe_allow_html=True)
 
 # Title and Product Hunt badge
 st.markdown("""
-    <div class="title-container">
+    <div class="header-container">
         <div>
             <div class="title">DocuExplore</div>
-            <div class="subtitle">From PDF to Insight, Explore the Extra</div>
+            <div class="subtitle">From PDF to Insight</div>
         </div>
         <div class="product-hunt-badge">
             <a href="https://www.producthunt.com/posts/docuexplore?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-docuexplore" target="_blank">
-                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=474872&theme=dark" alt="DocuExplore - From PDF to Insight, Explore the Extra | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
+                <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=474872&theme=dark" alt="DocuExplore - From PDF to Insight | Product Hunt" />
             </a>
         </div>
     </div>
