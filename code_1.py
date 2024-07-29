@@ -189,6 +189,4 @@ with col2:
     else:
         st.info("Upload a PDF to see related articles.")
 
-# Add a footer
-st.markdown("---")
-st.markdown("OpenRAG - Powered by Gemini and Tavily")
+
